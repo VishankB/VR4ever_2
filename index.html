@@ -14,9 +14,10 @@
     justify-content: center;
     font-family: 'Segoe UI', sans-serif;
 
+    /* Promise / commitment background */
     background:
       linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-      url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=70");
+      url("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=70");
 
     background-size: cover;
     background-position: center 30%;
@@ -24,11 +25,10 @@
     background-attachment: fixed;
   }
 
-  /* Floating Hearts */
   .heart {
     position: absolute;
     color: rgba(255, 60, 120, 0.6);
-    font-size: 20px;
+    font-size: 18px;
     animation: floatUp 8s linear infinite;
     z-index: 1;
   }
@@ -39,8 +39,8 @@
   }
 
   .card {
-    width: 350px;
-    height: 480px;
+    width: 360px;
+    height: 540px; /* ensures full message fits */
     perspective: 1000px;
     z-index: 2;
   }
@@ -69,7 +69,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 26px;
     text-align: center;
   }
 
@@ -103,17 +103,17 @@
 
   .back h2 {
     color: #c9184a;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 
   .message {
-    font-size: 1.15em;
+    font-size: 1.05em;
     color: #444;
-    line-height: 1.65;
+    line-height: 1.55;
   }
 
   .signature {
-    margin-top: 20px;
+    margin-top: 18px;
     font-style: italic;
     color: #c9184a;
     font-weight: bold;
@@ -123,13 +123,13 @@
 <body>
 
 <script>
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 18; i++) {
     let heart = document.createElement("div");
     heart.className = "heart";
     heart.innerHTML = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = (5 + Math.random() * 5) + "s";
-    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.fontSize = (14 + Math.random() * 18) + "px";
     document.body.appendChild(heart);
   }
 </script>
@@ -144,7 +144,7 @@
       <div class="tap">Tap the ring</div>
     </div>
 
-    <!-- BACK -->
+    <!-- BACK (MESSAGE UNCHANGED) -->
     <div class="back">
       <h2>My Forever, Ra ❤️</h2>
       <div class="message">
@@ -165,7 +165,7 @@
       </div>
 
       <div class="signature">
-        — Yours, Forever - V ❤️
+        — Yours, always ❤️
       </div>
     </div>
 
