@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Happy Propose Day Ra ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+
+    background:
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=70");
+
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* Floating Hearts */
+  .heart {
+    position: absolute;
+    color: rgba(255, 60, 120, 0.6);
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+    z-index: 1;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+  }
+
+  .card {
+    width: 350px;
+    height: 480px;
+    perspective: 1000px;
+    z-index: 2;
+  }
+
+  .inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+
+  .card.flip .inner {
+    transform: rotateY(180deg);
+  }
+
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .front h1 {
+    color: #c9184a;
+    margin-bottom: 20px;
+  }
+
+  .rose {
+    font-size: 4.8em;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  .tap {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #777;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 35px rgba(201, 24, 74, 0.8);
+  }
+
+  .back h2 {
+    color: #c9184a;
+    margin-bottom: 15px;
+  }
+
+  .message {
+    font-size: 1.15em;
+    color: #444;
+    line-height: 1.65;
+  }
+
+  .signature {
+    margin-top: 20px;
+    font-style: italic;
+    color: #c9184a;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<script>
+  for (let i = 0; i < 20; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+  }
+</script>
+
+<div class="card" id="card">
+  <div class="inner">
+
+    <!-- FRONT -->
+    <div class="front">
+      <h1>Happy Propose Day 💍</h1>
+      <div class="rose" onclick="flipCard()">💍</div>
+      <div class="tap">Tap the ring</div>
+    </div>
+
+    <!-- BACK -->
+    <div class="back">
+      <h2>My Forever, Ra ❤️</h2>
+      <div class="message">
+        Ra ❤️,<br /><br />
+        From the moment you entered my life,<br />
+        my heart chose you — quietly, completely, forever.<br /><br />
+
+        You are my love, my best friend,<br />
+        my today and all my tomorrows.<br />
+        Every dream I have begins and ends with you.<br /><br />
+
+        So today, and every day after,<br />
+        I ask you with all my heart…<br /><br />
+
+        Will you continue choosing me,<br />
+        loving me, and walking beside me<br />
+        for the rest of our lives? 💍❤️
+      </div>
+
+      <div class="signature">
+        — Yours, Forever - V ❤️
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function flipCard() {
+    document.getElementById("card").classList.add("flip");
+  }
+</script>
+
+</body>
+</html>
