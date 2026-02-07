@@ -14,13 +14,13 @@
     justify-content: center;
     font-family: 'Segoe UI', sans-serif;
 
-    /* Promise / commitment background */
+    /* Meeting hands background (safe composition) */
     background:
       linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-      url("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=70");
+      url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1200&q=70");
 
     background-size: cover;
-    background-position: center 30%;
+    background-position: center bottom; /* keeps hands visible */
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
@@ -40,7 +40,7 @@
 
   .card {
     width: 360px;
-    height: 540px; /* ensures full message fits */
+    height: 540px;
     perspective: 1000px;
     z-index: 2;
   }
@@ -137,46 +137,15 @@
 <div class="card" id="card">
   <div class="inner">
 
-    <!-- FRONT -->
     <div class="front">
       <h1>Happy Propose Day 💍</h1>
       <div class="rose" onclick="flipCard()">💍</div>
       <div class="tap">Tap the ring</div>
     </div>
 
-    <!-- BACK (MESSAGE UNCHANGED) -->
     <div class="back">
       <h2>My Forever, Ra ❤️</h2>
       <div class="message">
         Ra ❤️,<br /><br />
         From the moment you entered my life,<br />
-        my heart chose you — quietly, completely, forever.<br /><br />
-
-        You are my love, my best friend,<br />
-        my today and all my tomorrows.<br />
-        Every dream I have begins and ends with you.<br /><br />
-
-        So today, and every day after,<br />
-        I ask you with all my heart…<br /><br />
-
-        Will you continue choosing me,<br />
-        loving me, and walking beside me<br />
-        for the rest of our lives? 💍❤️
-      </div>
-
-      <div class="signature">
-        — Yours, always ❤️
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<script>
-  function flipCard() {
-    document.getElementById("card").classList.add("flip");
-  }
-</script>
-
-</body>
-</html>
+        my heart chose you — quietly, completely, forever.<br />
